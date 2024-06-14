@@ -15,6 +15,14 @@
 #define ADJUST  3
 #define COLEMAK 4
 
+#define BTAB    LS(TAB)
+#define RADEL   RAISE DEL
+#define LSPC    LSHFT SPACE
+#define LENT    LCMD ENTER
+#define RENT    RCMD ENTER
+#define RSPC    RSHFT SPACE
+#define LOBSP   LOWER BSPC
+
 &caps_word {
     continue-list = <UNDERSCORE MINUS DEL BSPC LSHFT RSHFT>;
 };
