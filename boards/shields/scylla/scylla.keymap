@@ -13,14 +13,15 @@
 #define LOWER   1
 #define RAISE   2
 #define ADJUST  3
+#define COLEMAK 4
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS DEL BSPC LSHFT RSHFT>;
 };
 
 / {
-
-  // enable ADJUST Layer
+  
+    // enable ADJUST Layer
   conditional_layers {
       compatible = "zmk,conditional-layers";
       tri_layer {
@@ -163,9 +164,37 @@
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                              &none         &none       &none     &none       &none  &out OUT_BLE
 &bt BT_NXT  &none         &none         &none         &none         &kp C_VOL_UP                              &kp C_BRI_UP  &none       &none     &none       &none  &out OUT_USB
 &bt BT_PRV  &none         &none         &none         &none         &kp C_VOL_DN                              &kp C_BRI_DN  &kp C_PREV  &kp C_PP  &kp C_NEXT  &none  &none
-&none       &none         &none         &none         &none         &kp C_MUTE                                &none         &none       &none     &none       &none  &none
+&none       &none         &none         &none         &none         &kp C_MUTE                                &none         &none       &none     &none       &none  &tog COLEMAK
                                                                     &trans        &none  &none  &none  &none  &trans
                                                                                   &none  &none  &none  &none
+      >;
+    };
+
+    colemak_layer {
+// .-----------------------------------------.                                  .-----------------------------------------.
+// | Esc  |   1  |   2  |   3  |   4  |   5  |                                  |   6  |   7  |   8  |   9  |   0  |  -   |
+// |------+------+------+------+------+------|                                  |------+------+------+------+------+------|
+// | Tab> |   Q  |   W  |   F  |   P  |   B  |                                  |   J  |   L  |   U  |   Y  |   ;  |  =   |
+// |------+------+------+------+------+------|                                  |------+------+------+------+------+------|
+// | <Tab |   A  |   R  |   S  |   T  |   G  |                                  |   M  |   N  |   E  |   I  |   O  |  '   |
+// |------+------+------+------+------+------|                                  |------+------+------+------+------+------|
+// | Shft |   Z  |   X  |   C  |   D  |   V  |                                  |   K  |   H  |   ,  |  .   |   /  |   \  |
+// '-----------------------------------------/                                  \-----------------------------------------'
+//                                  /  Del  /---------------.    .---------------\  Bsp  \  
+//                                 / RAISE / Space / Enter /      \ Enter \ Space \ LOWER \ 
+//                                '-------/ Shift /  CMD  /        \  CMD  \ Shift \-------'
+//                                       /---------------/          \---------------\
+//                                      /  Ctrl /  Opt  /            \  Opt  \ Ctrl  \
+//                                     /       /       /              \       \       \
+//                                    '---------------'                '---------------'
+
+      bindings = <
+&gresc     &kp N1  &kp N2  &kp N3  &kp N4  &kp  N5                                                  &kp  N6     &kp N7  &kp N8     &kp N9   &kp N0     &kp MINUS
+&kp TAB    &kp Q   &kp W   &kp F   &kp P   &kp  B                                                   &kp  J      &kp L   &kp U      &kp Y    &kp SEMI   &kp EQUAL
+&kp BTAB   &kp A   &kp R   &kp S   &kp T   &kp  G                                                   &kp  M      &kp N   &kp E      &kp I    &kp O      &kp SQT
+&kp LSHFT  &kp Z   &kp X   &kp C   &kp D   &kp  V                                                   &kp  K      &kp H   &kp COMMA  &kp DOT  &kp SLASH  &kp BSLH
+                                           &olt RADEL  &omt LSPC   &omt LENT  &omt RENT  &omt RSPC  &olt LOBSP
+                                                       &kp  LCTRL  &kp  LALT  &kp  RALT  &kp  RCTRL
       >;
     };
 
