@@ -80,7 +80,7 @@
 //                                 /       / SPACE / RAISE /      \ LOWER \ ENTER \        \ 
 //                                '-------/       /       /        \       \       \--------'
 //                                       /---------------/          \---------------\
-//                                      /  HOME /  BSPC /            \  DEL  \ RALT  \
+//                                      /  HOME /ADJUST /            \  DEL  \ RALT  \
 //                                     /       /       /              \       \       \
 //                                    '---------------'                '---------------'
 
@@ -90,7 +90,7 @@
 &kp LSHFT   &kp A   &kp S   &kp D   &kp F   &kp G                                                   &kp H      &kp J   &kp K      &kp L    &kp SEMI   &kp SQT
 &kp LCTRL  &kp Z   &kp X   &kp C   &kp V   &kp B                                                   &kp N      &kp M   &kp COMMA  &kp DOT  &kp SLASH  &kp BSLH
                                            &kp LCTRL  &kp SPACE   &mo RAISE   &mo LOWER  &kp ENTER  &kp RGUI
-                                                      &mo ADJUST  &kp BSPC    &kp DEL    &kp RALT
+                                                      &mo HOME    &kp ADJUST  &kp DEL    &kp RALT
       >;
     };
 
@@ -117,7 +117,7 @@
 &trans     &kp LT    &kp GT  &kp LBKT  &kp RBKT  &kp PLUS                                            &kp PLUS   &kp HOME  &kp UP    &kp END    &none      &kp F12
 &trans     &kp EXCL  &kp AT  &kp LPAR  &kp RPAR  &kp MINUS                                           &kp MINUS  &kp LEFT  &kp DOWN  &kp RIGHT  &kp QMARK  &kp UNDER
 &trans     &none     &none   &kp LBRC  &kp RBRC  &kp EQUAL                                           &kp EQUAL  &none     &none     &none      &none      &none
-                                                 &trans     &trans  &caps_word  &trans   &sys_reset  &trans
+                                                 &trans     &trans  &caps_word  &trans   &sys_reset  &kp HASH
                                                             &trans  &trans      &trans   &bootloader
       >;
     };
@@ -136,7 +136,7 @@
 //                                 /       / Reset /       /      \ CAPS  \       \       \
 //                                '-------/       /       /        \       \       \-------'
 //                                       /---------------/          \---------------\
-//                                      /  Boot /       /            \       \       \
+//                                      /       / Boot  /            \       \       \
 //                                     /       /       /              \       \       \
 //                                    '---------------'                '---------------'
           
@@ -145,8 +145,8 @@
 &trans     &kp LT    &kp GT  &kp LBKT  &kp RBKT  &kp PLUS                                            &kp PLUS   &kp HASH  &kp DLLR  &kp PRCNT  &none      &kp F12
 &trans     &kp EXCL  &kp AT  &kp LPAR  &kp RPAR  &kp MINUS                                           &kp MINUS  &kp FSLH  &kp STAR  &kp TILDE  &kp QMARK  &kp UNDER
 &trans     &none     &none   &kp LBRC  &kp RBRC  &kp EQUAL                                           &kp EQUAL  &kp AMPS  &kp PIPE  &kp CARET  &trans     &trans
-                                                 &trans     &sys_reset   &trans   &caps_word  &trans  &trans
-                                                            &bootloader  &trans   &trans      &trans
+                                                 &kp HASH  &sys_reset   &trans   &caps_word  &trans  &trans
+                                                           &trans  &bootloader   &trans      &trans
       >;
     };
 
